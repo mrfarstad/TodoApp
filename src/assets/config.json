@@ -1,0 +1,4 @@
+{
+  "todosUrl": "http://localhost:5000/api/todo",
+  "todos": "getTodos"
+}
