@@ -1,4 +1,9 @@
 # TodoApp
+This is a simple Todo application made in AngularJS. The design is minimalistic and the focus is on practising using Angular.
+The application sends queries to an API made in ASP.NET.
+
+This is a simple hobby project, nothing to fancy :-)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
