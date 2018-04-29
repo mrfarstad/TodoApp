@@ -10,6 +10,8 @@
   width: 15em;
 }
 .todos li {
+  display: flex;
+  justify-content: space-between;
   cursor: pointer;
   position: relative;
   left: 0;

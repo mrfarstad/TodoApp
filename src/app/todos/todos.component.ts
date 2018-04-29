@@ -17,10 +17,31 @@ export class TodosComponent implements OnInit {
   }
 
   onSelect(todo: Todo): void {
-    todo.isCompleted = !todo.isCompleted;
+    this.todoService
+      .updateTodo({ ...todo, isComplete: !todo.isComplete })
+      .subscribe(_ => {
+        this.todos = this.todos.map(
+          t => (t.id === todo.id ? { ...t, isComplete: !t.isComplete } : t)
+        );
+      });
   }
 
   getTodos(): void {
     this.todoService.getTodos().subscribe(todos => (this.todos = todos));
+  }
+
+  add(description: string): void {
+    description = description.trim();
+    if (!description) {
+      return;
+    }
+    this.todoService
+      .addTodo({ name: description } as Todo)
+      .subscribe(todo => this.todos.push(todo));
+  }
+
+  delete(todo: Todo): void {
+    this.todos = this.todos.filter(t => t !== todo);
+    this.todoService.deleteTodo(todo).subscribe();
   }
 }

@@ -1,6 +1,18 @@
 <h2>Todos</h2>
 <ul class="todos">
   <li *ngFor="let todo of todos" (click)="onSelect(todo)">
-    <span class="badge">{{todo.id}}</span> {{todo.name}} {{todo.isCompleted}}
+    <div><span class="badge">{{todo.id}} </span> {{todo.name}} {{todo.isComplete}}</div>
+    <button class="delete" title="delete todo"
+(click)="delete(todo)">x</button>
   </li>
 </ul>
+
+<div>
+  <label>Todo description:
+    <input #todoDesc />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(todoDesc.value); todoDesc.value=''">
+    add
+  </button>
+</div>
