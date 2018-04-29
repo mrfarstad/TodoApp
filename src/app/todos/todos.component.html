@@ -1,7 +1,7 @@
 <h2>Todos</h2>
 <ul class="todos">
   <li *ngFor="let todo of todos" (click)="onSelect(todo)">
-    <div><span class="badge">{{todo.id}} </span> {{todo.name}} {{todo.isComplete}}</div>
+    <div><span class="badge">{{todo.id}} </span><span [ngClass]="(todo.isComplete) ? 'completed' : 'text' "> {{todo.name}}</span></div>
     <button class="delete" title="delete todo"
 (click)="delete(todo)">x</button>
   </li>

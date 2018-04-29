@@ -10,6 +10,8 @@ import { TodoService } from "../todo.service";
 export class TodosComponent implements OnInit {
   todos: Todo[];
 
+  status = "isComplete";
+
   constructor(private todoService: TodoService) {}
 
   ngOnInit() {

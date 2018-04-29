@@ -30,6 +30,12 @@
   background-color: #ddd;
   left: 0.1em;
 }
+.todos .completed {
+  position: relative;
+  top: -3px;
+  text-decoration: line-through;
+}
+
 .todos .text {
   position: relative;
   top: -3px;
